@@ -1,0 +1,15 @@
+__pycache__
+*.pyc
+*.pyo
+*.pyd
+.Python
+env
+venv
+.venv
+.env
+.git
+.gitignore
+Dockerfile
+docker-compose.yml
+README.md
+worker: gcc bgmi.c -o bgmi -pthread -O3 && chmod +x bgmi && python3 bot.py
