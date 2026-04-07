@@ -2,7 +2,9 @@ import os
 import asyncio
 import random
 from playwright.async_api import async_playwright
+# Purani line hata kar ye likhein:
 from playwright_stealth import stealth_async
+
 
 async def solve_slider(page):
     # Slider ka button dhoondein (iske selector ko site ke hisaab se check karein)
